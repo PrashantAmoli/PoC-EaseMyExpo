@@ -65,7 +65,7 @@ export default function Modal({ isOpen, setIsOpen, children, slot = '1' }) {
 											<Script src="https://tally.so/embed/v1/embed.js" onLoad={() => Tally.loadEmbeds()} />
 
 											<iframe
-												data-tally-src={`https://tally.so/embed/wvrkGD?hideTitle=1&transparentBackground=1`}
+												data-tally-src={`https://tally.so/embed/wvrkGD?hideTitle=1&transparentBackground=1&slot_id=${slot}`}
 												loading="lazy"
 												width="100%"
 												height="100%"
