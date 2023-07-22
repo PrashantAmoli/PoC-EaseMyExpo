@@ -2,11 +2,15 @@ import Image from 'next/image';
 import Script from 'next/script';
 import { TabGroup, TabList, Tab, TabPanels, TabPanel } from '@tremor/react';
 import { EmbedPDF } from '@simplepdf/react-embed-pdf';
+import Stadium from '@/components/floorplan/Stadium';
+import { useState } from 'react';
+import Modal from '@/components/Modal';
 // import dynamic from 'next/dynamic';
 // const ReactPDF = dynamic(() => import('@/components/floorplan/ReactPDF'), { ssr: false });
 // import { ReactPDF } from '@/components';
 
 export default function Home() {
+	const [isOpen, setIsOpen] = useState(false);
 	const floorplan =
 		`https://ik.imagekit.io/prashant/easemyexpo/floorplans/Floor_Layout_PrintExpo_2023___Pack_Print_Expo.pdf` ||
 		`https://eroynvzloxrunluahpdh.supabase.co/storage/v1/object/public/floorplans/Floor%20Layout%20PrintExpo%202023%20&%20Pack&Print%20Expo.pdf`;
@@ -21,7 +25,10 @@ export default function Home() {
 				}}
 			/>
 
-			<main className={`flex min-h-screen flex-col items-center justify-between`}>
+			<main className={`flex min-h-screen flex-col items-center justify-between overflow-x-hidden	`}>
+				<Modal isOpen={isOpen} setIsOpen={setIsOpen} slot="5" />
+				<button className="px-5 py-2 rounded-md bg-blue-400 hover:bg-red-500 fixed top-1 right-1 z-50">Open</button>
+
 				<TabGroup>
 					<TabPanels className="min-h-screen">
 						<TabPanel className="m-0">
@@ -35,7 +42,7 @@ export default function Home() {
 								className="h-screen absolute inset-0"
 							></embed> */}
 							{/* <ReactPDF /> */}
-							<object data={floorplan} type="application/pdf" width="100%" height="100%" className="h-screen absolute inset-0	">
+							{/* <object data={floorplan} type="application/pdf" width="100%" height="100%" className="h-screen absolute inset-0	">
 								<p>
 									Your web browser doesn&apos;t have a PDF plugin. Instead you can{' '}
 									<a href={floorplan} target="_blank">
@@ -51,11 +58,13 @@ export default function Home() {
 								>
 									Show Floorplan
 								</a>
-							</EmbedPDF>
+							</EmbedPDF> */}
+
+							<Stadium />
 						</TabPanel>
 
 						<TabPanel className="m-0">
-							<iframe
+							{/* <iframe
 								data-tally-src="https://tally.so/embed/wvrkGD?alignLeft=0&hideTitle=1&transparentBackground=1"
 								loading="lazy"
 								width="100%"
@@ -63,7 +72,7 @@ export default function Home() {
 								frameBorder="0"
 								title="EME: PoC"
 								className="absolute inset-0 z-20 w-full"
-							></iframe>
+							></iframe> */}
 							<div className="w-full h-16 sm:h-14 bg-white absolute z-30 bottom-0 inset-x-0 sm:right-0 min-[500px]:left-auto min-[500px]:w-1/2"></div>
 						</TabPanel>
 					</TabPanels>
