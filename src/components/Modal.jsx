@@ -61,7 +61,7 @@ export default function Modal({ isOpen, setIsOpen, children, slot = '1' }) {
 									<div className="mt-2">
 										<p className="text-sm text-gray-500">Are you sure you want to book slot {slot}?</p>
 
-										<div className="relative w-full h-[88vh]">
+										<div className="relative w-full h-[80vh]">
 											<Script src="https://tally.so/embed/v1/embed.js" onLoad={() => Tally.loadEmbeds()} />
 
 											<iframe
