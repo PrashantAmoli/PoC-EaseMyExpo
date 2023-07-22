@@ -61,7 +61,7 @@ export default function Modal({ isOpen, setIsOpen, children, slot = '1' }) {
 									<div className="mt-2">
 										<p className="text-sm text-gray-500">Are you sure you want to book slot {slot}?</p>
 
-										<div className="relative w-full h-96">
+										<div className="relative w-full h-[88vh]">
 											<Script src="https://tally.so/embed/v1/embed.js" onLoad={() => Tally.loadEmbeds()} />
 
 											<iframe
@@ -95,9 +95,9 @@ export default function Modal({ isOpen, setIsOpen, children, slot = '1' }) {
 											Yes, Book it
 										</button>
 
-										<a href="https://tally.so#tally-open=wvrkGD&tally-layout=modal&tally-width=600&tally-align-left=1&tally-hide-title=1&tally-overlay=1&tally-emoji-text=👋&tally-emoji-animation=wave&tally-auto-close=10000">
+										{/* <a href="https://tally.so#tally-open=wvrkGD&tally-layout=modal&tally-width=600&tally-align-left=1&tally-hide-title=1&tally-overlay=1&tally-emoji-text=👋&tally-emoji-animation=wave&tally-auto-close=10000">
 											Click me
-										</a>
+										</a> */}
 									</div>
 								</Dialog.Panel>
 							</Transition.Child>
