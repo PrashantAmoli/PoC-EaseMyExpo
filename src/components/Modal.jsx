@@ -2,7 +2,7 @@ import { Dialog, Transition } from '@headlessui/react';
 import Script from 'next/script';
 import { Fragment, useEffect, useState } from 'react';
 
-export default function Modal({ isOpen, setIsOpen, children, slot = '1' }) {
+export default function Modal({ isOpen, setIsOpen, children, slot = 'A1' }) {
 	// let [isOpen, setIsOpen] = useState(true);
 
 	function closeModal() {
